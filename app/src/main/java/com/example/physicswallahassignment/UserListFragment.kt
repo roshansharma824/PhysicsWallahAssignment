@@ -64,8 +64,8 @@ class UserListFragment : Fragment() {
 
     private fun onBackPress(){
         backArrow.setOnClickListener {
-            val intent = Intent (getActivity(), MainActivity::class.java)
-            getActivity()?.startActivity(intent)
+
+            requireActivity().finish()
         }
     }
 }
