@@ -1,5 +1,6 @@
 package com.example.physicswallahassignment
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,6 +10,7 @@ import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.android.synthetic.main.custom_action_bar.*
 import kotlinx.android.synthetic.main.fragment_user_list.*
 
 
@@ -31,6 +33,8 @@ class UserListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        progressBar.visibility = View.VISIBLE
+        onBackPress()
         initRecyclerView()
         initViewModel()
     }
@@ -46,9 +50,11 @@ class UserListFragment : Fragment() {
         val viewModel:MainActivityViewModel = ViewModelProvider(this).get(MainActivityViewModel::class.java)
         viewModel.getLiveDataObserver().observe(viewLifecycleOwner, Observer {
             if(it != null) {
+                progressBar.visibility = View.GONE
                 recyclerAdapter.setUserList(it)
                 recyclerAdapter.notifyDataSetChanged()
             } else {
+                progressBar.visibility = View.GONE
                 Toast.makeText(requireContext(), "Error in getting list", Toast.LENGTH_SHORT).show()
             }
         })
@@ -56,4 +62,10 @@ class UserListFragment : Fragment() {
     }
 
 
+    private fun onBackPress(){
+        backArrow.setOnClickListener {
+            val intent = Intent (getActivity(), MainActivity::class.java)
+            getActivity()?.startActivity(intent)
+        }
+    }
 }

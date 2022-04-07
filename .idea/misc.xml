@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/91959/AndroidStudioProjects/PhysicsWallahAssignment/app/src/main/res/layout/activity_main.xml" value="0.16077898550724637" />
+        <entry key="..\:/Users/91959/AndroidStudioProjects/PhysicsWallahAssignment/app/src/main/res/drawable/bg_gradient.xml" value="0.138" />
+        <entry key="..\:/Users/91959/AndroidStudioProjects/PhysicsWallahAssignment/app/src/main/res/layout/activity_main.xml" value="0.12" />
+        <entry key="..\:/Users/91959/AndroidStudioProjects/PhysicsWallahAssignment/app/src/main/res/layout/custom_action_bar.xml" value="0.1" />
         <entry key="..\:/Users/91959/AndroidStudioProjects/PhysicsWallahAssignment/app/src/main/res/layout/fragment_user_list.xml" value="0.17552083333333332" />
         <entry key="..\:/Users/91959/AndroidStudioProjects/PhysicsWallahAssignment/app/src/main/res/layout/user_list.xml" value="0.22" />
       </map>
