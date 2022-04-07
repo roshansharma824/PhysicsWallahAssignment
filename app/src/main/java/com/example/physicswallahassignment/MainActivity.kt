@@ -14,27 +14,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        initRecyclerView()
-        initViewModel()
     }
 
-    private fun initRecyclerView() {
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerAdapter = UserListAdapter(this)
-        recyclerView.adapter =recyclerAdapter
 
-    }
 
-    private fun initViewModel() {
-        val viewModel:MainActivityViewModel = ViewModelProvider(this).get(MainActivityViewModel::class.java)
-        viewModel.getLiveDataObserver().observe(this, Observer {
-            if(it != null) {
-                recyclerAdapter.setUserList(it)
-                recyclerAdapter.notifyDataSetChanged()
-            } else {
-                Toast.makeText(this, "Error in getting list", Toast.LENGTH_SHORT).show()
-            }
-        })
-        viewModel.makeAPICall()
-    }
 }

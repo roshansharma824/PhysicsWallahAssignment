@@ -6,13 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+
+
+    <androidx.fragment.app.FragmentContainerView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/fragment_container_view"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_margin="10dp"
-        />
+        android:layout_height="match_parent"
+        android:name="com.example.physicswallahassignment.UserListFragment" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
